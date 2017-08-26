@@ -1,4 +1,4 @@
--Inicializar repo en linux-
+	-Inicializar repo en linux-
 
 git config --global user.name"user" |  simplemente nombre.
 git config --global user.email "user@gmail.com" | mail del usr.
@@ -26,3 +26,10 @@ una vez esté todo inciializado, los pasos a seguir cada vez que quiera hacer un
 	-"git add ." o "git add nombre_del_archivo" 
 	-git commit -m "comentario obligatorio"
 	-git push origin master
+
+	-clonar repo-
+nos crea una carpeta ya con el nombre del repo, asi q si queremos clonar "algo" no hacemos una carpeta "algo" y clonamos dentro, xq aparecerá algo/algo.
+git init
+git clone https://github.com/gutic/pizasistem
+
+
