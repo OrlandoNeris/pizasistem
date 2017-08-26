@@ -1,0 +1,9 @@
+importar el fichero "base de datos sesiones.sql a una bd usando phpmyadmin
+se logea con el user test, contraseña test.
+configurar la bd 
+	-> ir a carpeta config
+	-> editar config.php segun los comentarios
+funcionamiento.
+	desde index.php llamamos a las funciones .js que estan 		en la carpeta js a traves de la inclusion del archivo head.php en index.php que se encuentra en la carpeta views.
+	las funciones q se encuentran en main.js llaman al archivo cl_abm.php que se encuentra en /includes/clases.
+	una vez aprobado el login reedirecciona a main.php
