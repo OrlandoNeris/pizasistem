@@ -1,0 +1,23 @@
+-Inicializar repo en linux-
+
+git config --global user.name"user" |  simplemente nombre 
+git config --global user.email "user@gmail.com" | mail del usr
+git init | inicializo un repo en la ubicacion donde esté
+git add . | añade todos los archivos al  .init del repositorio
+git commit -m "comentario obligatorio" | hago el commit
+
+_____________________________________________________
+creo previamente el repositorio https://github.com/gutic/pizasistem en la pagina git.com
+____________________________________________________
+
+
+git remote add origin https://github.com/gutic/pizasistem.git
+
+
+__________________________________________________________
+nose que hace pero es necesario hacer el upstream
+__________________________________________________________
+
+git remote add upstream https://github.com/gutic/pizasistem.git
+git push origin master | hago push
+
