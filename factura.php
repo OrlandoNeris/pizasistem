@@ -4,21 +4,21 @@
 	include_once('views/head.php');
 	include_once('views/navbar.php');
 
-	?>
-	<?php
-//parte guiso -solo de test-
-		$iva = 0.21;
-		$totaliva = 0;
-		$host="localhost";
-		$bbdd="usertest";
-		$user="root";
-		$pass="qweasd";
-		$conexion=new mysqli($$host,$user,$pass,$bbdd);
-		$registros=mysqli_query($conexion,"SELECT id, Tipo FROM Factura") or
-		die("error:".mysqli_error($conexion));
-		$reg=mysqli_fetch_array($registros)
-//parte guiso -solo de test-
-	 ?>
+?>
+<?php
+  //parte guiso -solo de test-
+	$iva = 0.21;
+	$totaliva = 0;
+	$host="localhost";
+	$bbdd="usertest";
+	$user="root";
+	$pass="qweasd";
+	$conexion=new mysqli($$host,$user,$pass,$bbdd);
+	$registros=mysqli_query($conexion,"SELECT id, Tipo FROM Factura") or
+	die("error:".mysqli_error($conexion));
+	$reg=mysqli_fetch_array($registros)
+  //parte guiso -solo de test-
+?>
 
 
  <div align="center" style="width:60%" class="col-xs-50 col-sm-0 col-md-50 col-lg-0 well">
