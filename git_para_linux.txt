@@ -1,10 +1,10 @@
 -Inicializar repo en linux-
 
-git config --global user.name"user" |  simplemente nombre 
-git config --global user.email "user@gmail.com" | mail del usr
-git init | inicializo un repo en la ubicacion donde esté
-git add . | añade todos los archivos al  .init del repositorio
-git commit -m "comentario obligatorio" | hago el commit
+git config --global user.name"user" |  simplemente nombre.
+git config --global user.email "user@gmail.com" | mail del usr.
+git init | inicializo un repo en la ubicacion donde esté.
+git add . | añade todos los archivos al  .init del repositorio -> 	añadir siempre que se crean nuevos archivos.
+git commit -m "comentario obligatorio" | hago el commit.
 
 _____________________________________________________
 creo previamente el repositorio https://github.com/gutic/pizasistem en la pagina git.com
@@ -21,3 +21,8 @@ __________________________________________________________
 git remote add upstream https://github.com/gutic/pizasistem.git
 git push origin master | hago push
 
+__________________________________________________________
+una vez esté todo inciializado, los pasos a seguir cada vez que quiera hacer un push:
+	-"git add ." o "git add nombre_del_archivo" 
+	-git commit -m "comentario obligatorio"
+	-git push origin master
