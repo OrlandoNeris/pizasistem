@@ -40,3 +40,4 @@ git rm archivo1.txt
 
 Para borrar directorios (y sus contenidos):
 git rm -r midirectorio
+_________________________________________________________
