@@ -13,7 +13,6 @@
 	<script type="text/javascript" src="js/jquery.1.8.1.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
 
-
 	<!-- IMPORTAMOS LOS ESTILOS DEL FRAMEWORK DE BOOTSTRAP-->
 
 	<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css">

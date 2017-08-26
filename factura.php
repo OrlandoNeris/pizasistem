@@ -6,7 +6,7 @@
 
 	?>
 	<?php
-	//parte guiso -solo de test-
+//parte guiso -solo de test-
 		$iva = 0.21;
 		$totaliva = 0;
 		$host="localhost";
