@@ -34,10 +34,25 @@ git clone https://github.com/gutic/pizasistem
 cd /algo
 git pull | actualizo el repo con el commit mas reciente
 
-__________________________________________________________
-Para borrar archivos:
+_________________________________________________________
+		
+		-Para borrar archivos-
 git rm archivo1.txt
 
 Para borrar directorios (y sus contenidos):
 git rm -r midirectorio
+_________________________________________________________
+
+		-ramas-
+Para no trabajar en el master y no hacer cagadas se hace una rama para verificar previamente antes de hacer el push al master
+
+	Crea una nueva rama llamada "nueva_rama" y cámbiate a ella 		usando:
+		git checkout -b  nueva_rama
+	volver a la rama principal
+		git checkout master
+	y borra la rama
+		git branch -d nueva_rama
+
+Una rama nueva no estará disponible para los demás a menos que subas (push) la rama a tu repositorio remoto
+	git push origin <branch>
 _________________________________________________________
