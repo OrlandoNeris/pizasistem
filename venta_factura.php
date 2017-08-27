@@ -24,7 +24,7 @@
 										<td><input type="text" name="nombreproducto"></td>
 									</tr>
 									<tr>
-										<td><b>Cantidad a comprar</b></td>
+										<td><b>Cantidad </b></td>
 										<td><input type="text" name="Cantidad" value="0"></td>
 									</tr>
 								</form>
