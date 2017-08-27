@@ -37,7 +37,26 @@
       case 'factura':
         echo TRUE;
         break;
+      case 'num_factura':
+        $registros=mysqli_query($conexion,"SELECT NroComprobante FROM Factura;") or
+          die("Problemas en el select:".mysqli_error($conexion));
+         $reg=mysqli_fetch_array($registros);
+         $ultimo = $reg[0];
+         while ($reg=mysqli_fetch_array($registros))
+         {
+           if ($ultimo < $reg[0]){
+               $ultimo = $reg[0];
+           }
+         }
+         if($ultimo == 0){
+           $ultimo = 1;
+         }
+         $ultimo += 1;
+         echo $ultimo;
+         break;
+      //case 'buscar':
+        //$data = array( "total"=>0, "paginas"=>0, "registros"=>array() );
+        //$cantidad = 10;
+
     }
-
-
  ?>

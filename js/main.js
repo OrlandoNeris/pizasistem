@@ -44,3 +44,19 @@ function factura()
 		window.location.href = "factura.php";
 	});
 }
+
+function getNumeroFactura(){ //busco el numero de la nueva factura
+	$.ajax({
+	type: "POST",
+	url: 'includes/clases/cl_abm.php',
+	data: "boton=num_factura"
+}).done(function( ulti ) {
+			alert("algo"+ulti);
+			$("#formulario [name='num_factura']").val(ulti)
+	});
+}
+// funcion que se inicia luego de cargar la pagina
+$(function () {
+	getNumeroFactura();
+	buscar();
+})

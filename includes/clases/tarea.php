@@ -1,30 +1,36 @@
 <?php
   require("../../config/config.php");
-  $Usuario = "test";
-  $Contrasena = "testing";
-  $result = mysqli_query($conexion,"SELECT * FROM Usuario WHERE Usuario='$Usuario' AND Contrasena='$Contrasena';");
-  if($Usua=mysqli_fetch_array($result)){
-    session_start();
-    $_SESSION['Id']=$Usua[0];
-    $_SESSION['Usuario']=$Usua[1];
-    $mensajeError='Logueado correctamente ok.';
-    $logok = TRUE;
-  }else{
+  $data = array( "total"=>0, "paginas"=>0, "registros"=>array() );
+  $cantidad = 10;
+  $sql ="SELECT SQL_CALC_FOUND_ROWS * FROM Producto ORDER BY NombreProducto LIMIT ".$pagina*$cantidad.",".$cantidad." ";
+  $result=mysqli_query($conexion, $sql);
+  $result_total = mysqli_query('SELECT FOUND_ROWS() as total');
+  $reg = mysql_fetch_assoc( $result_total );
+  $data["total"] = $reg["total"];
+  $data["paginas"] = ceil( $reg["total"]/$cantidad );
 
-    if (ini_get("session.use_cookies")) {
-      $params = session_get_cookie_params();
-      setcookie(session_name(), '', time() - 42000,
-      $params["path"], $params["domain"],
-      $params["secure"], $params["httponly"]
-      );
-    }
-    session_destroy();
-    $mensajeError='Usr o pass erronea';
+  while( $reg = mysql_fetch_assoc( $result ) ){//recorro los datos y los almaceno
+    $data["registros"][] = $reg;
+  }
+  echo $data[2];
 
-  };
-  echo $mensajeError;
-  echo $_SESSION['Id'];
-  echo $_SESSION['Usuario'];
+  /*
+
+  $registros=mysqli_query($conexion,"SELECT NroComprobante FROM Factura;") or
+    die("Problemas en el select:".mysqli_error($conexion));
+   $reg=($reg=mysqli_fetch_array($registros));
+   $ultimo = $reg[0];
+   while ($reg=mysqli_fetch_array($registros))
+   {
+     if ($ultimo < $reg[0]){
+         $ultimo = $reg[0];
+     }
+   }
+   if($ultimo == 0){
+     $ultimo = 1;
+   }
+   echo $ultimo +1 ;
+   */
     /*
 
     $Usua=mysqli_fetch_array($result);

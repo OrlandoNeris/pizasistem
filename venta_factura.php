@@ -2,6 +2,7 @@
 	error_reporting(E_ERROR);
 	include_once('views/head.php');
 	include_once('views/navbar.php');
+	include_once('includes/servicios/autocompleta.php')
 ?>
 <div class="col-xs-0 col-sm-0 col-md-0 col-lg-0 well">
   <table style="width:100%">
@@ -10,14 +11,14 @@
 				<fieldset>
 					<fieldset>
 						<legend>Filtros</legend>
-						Productos <input type="text" name="prov_fil" ><br>
+						Productos <input type="text" name="Buscar" ><br>
 						<input type="button" value="Buscar"  onclick="buscar();" />
 					</fieldset>
 					<img src="img/ajax-loader.gif" id="load_image" style="display:none;">
 					<table style="width:100%">
 						<thead>
 							<tr>
-								<td>Proveedor</td><td>Cuit</td><td>Tipo</td><td>Antiguedad</td>
+								<td>Producto</td><td>stock</td>
 							</tr>
 						</thead>
 						<tbody id="lista">
@@ -33,6 +34,10 @@
 					<form id="formulario">
 						<table>
 							<tr>
+								<td><b>fecha:</b></td>
+								<td><input type="text" name="anti" placeholder="dd/mm/aaaa"></td>
+							</tr>
+							<tr>
 								<td><b>Señor(es):</b></td>
 								<td><input type="text" name="prov" ></td> <!--cliente -->
 							</tr>
@@ -45,12 +50,8 @@
 								<td><input type="text" name="formapago" ></td>
 							</tr>
 							<tr>
-								<td><b>Tipo*:</b></td>
-								<td>
-									<select id="tipo" name="tipo">
-										<option value=0>-Tipo-</option>
-									</select>
-								</td>
+								<td><b>Numero Factura:</b></td>
+								<td><input type="text" name="num_factura"></td>
 							</tr>
 							<tr>
 								<td><b>Tipo Factura</b></td>
