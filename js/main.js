@@ -69,10 +69,9 @@ function buscar(){
 	}).done(function(data){
 		if(data){
 			data_busqueda = eval(data);
+			id_producto = data_busqueda[0].id;
 			$("#busqueda [name='idprod']").val(data_busqueda[0].id);
 			$("#busqueda [name='nombreproducto']").val(data_busqueda[0].ProdNombre);
-			//alert(data_busqueda[0].ProdNombre);
-			//alert(data_busqueda[0].id);
 		}else {
 			alert("No Hay existencias ");
 		}
