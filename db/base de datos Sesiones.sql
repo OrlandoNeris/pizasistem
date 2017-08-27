@@ -32,7 +32,7 @@ INSERT INTO `Producto` (`Id`, `Stock`, `NombreProducto`, `CostoProducto`) VALUES
 
 Create Table Persona
 (Id serial Primary key,
-TipoPersona int not null,
+TipoPersona int not null, /*1 cliente 2 prove*/
 Nombre varchar(70) not null,
 Telefono int not null,
 Direccion varchar(100) not null,

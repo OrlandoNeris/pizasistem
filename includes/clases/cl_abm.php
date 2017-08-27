@@ -35,7 +35,33 @@
         echo TRUE;
         break;
       case 'factura':
-        echo TRUE;
+        $id_producto = $_POST['id_prod'];
+        $cant = $_POST['Cantidad'];
+        $fecha = $_POST['fecha'];
+        $cli = $_POST['cliente'];
+        $dir = $_POST['dir'];
+        $formapago = $_POST['formapago'];
+        $num_factura = $_POST['num_factura'];
+        $tipo_factura = $_POST['tipo_factura'];
+        $no_vacio = strlen($id_producto) * strlen($cant) * strlen($fecha) * strlen($cli) * strlen($dir) * strlen($formapago) * strlen($num_factura) * strlen($tipo_factura);
+        if ($no_vacio > 0 ){
+          $result = mysqli_query($conexion,"SELECT stock, CostoProducto FROM Producto WHERE Id ='$id_producto';");
+          $reg_producto = mysqli_fetch_array($result);
+          $result = mysqli_query($conexion,"SELECT * FROM Persona WHERE Nombre ='$cli';");
+          if ($cant > $reg_producto[0] ){
+            echo "stock insuficiente";
+          }else {
+            if($reg_cli = mysqli_fetch_array($result)){
+              $stock_actual = $reg_producto[0] - $cant;
+              mysqli_query($conexion, "UPDATE Producto SET Stock ='$stock_actual' WHERE Id = '$id_producto';") or
+                die("Problemas en el select:".mysqli_error($conexion));
+            }else {
+              echo "No existe ese cliente";
+            }
+          }
+        }else {
+          echo "Campos incompletos";
+        }
         break;
       case 'num_factura':
         $registros=mysqli_query($conexion,"SELECT NroComprobante FROM Factura;") or

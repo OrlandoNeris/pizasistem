@@ -17,7 +17,7 @@
 							<tr>
 									<tr>
 										<td><b>Id Producto:</b></td>
-										<td><input type="text" name="idprod"></td>
+										<td><input type="text" name="idprod" id="id_prod"></td>
 									</tr>
 									<tr>
 										<td><b>Nombre producto:</b></td>
@@ -25,7 +25,7 @@
 									</tr>
 									<tr>
 										<td><b>Cantidad </b></td>
-										<td><input type="text" name="Cantidad" value="0"></td>
+										<td><input type="text" name="Cantidad" id="Cantidad" value="0"></td>
 									</tr>
 								</form>
 							</tr>
@@ -42,28 +42,28 @@
 						<table>
 							<tr>
 								<td><b>fecha:</b></td>
-								<td><input type="text" name="anti" placeholder="dd/mm/aaaa"></td>
+								<td><input type="text" name="anti" placeholder="dd/mm/aaaa" id="fecha"></td>
 							</tr>
 							<tr>
 								<td><b>Señor(es):</b></td>
-								<td><input type="text" name="prov" ></td> <!--cliente -->
+								<td><input type="text" name="cliente" id="cliente" ></td> <!--cliente -->
 							</tr>
 							<tr>
 								<td><b>Direcci&oacute;n de emisi&oacute;n:</b></td>
-								<td><input type="text" name="dir" ></td>					<!--lugar de emision -->
+								<td><input type="text" name="dir" id="dir" ></td>					<!--lugar de emision -->
 							</tr>
 							<tr>
 								<td><b>Forma de pago</b></td>
-								<td><input type="text" name="formapago" ></td>
+								<td><input type="text" name="formapago" id="formapago" ></td>
 							</tr>
 							<tr>
 								<td><b>Numero Factura:</b></td>
-								<td><input type="text" name="num_factura"></td>
+								<td><input type="text" name="num_factura" id="num_factura" ></td>
 							</tr>
 							<tr>
 								<td><b>Tipo Factura</b></td>
 								<td>
-									<select name="tipofactura">
+									<select name="tipofactura" id="tipo_factura">
 										<option value="A">A</option>
 										<option value="B">B</option>
 										<option value="C">C</option>
@@ -74,7 +74,7 @@
 						</table>
 						<input type="button" value="Guardar" onclick="guardar();" />
 						<input type="button" value="Limpiar"  onclick="limpiar();" />
-						<input type="button" value="Generar Factura" onclick="factura();" />
+						<input type="button" value="Generar Factura" onclick="factura_venta();" />
 					</form>
 				</fieldset>
 			</td>
