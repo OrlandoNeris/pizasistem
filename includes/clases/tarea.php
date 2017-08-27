@@ -1,18 +1,13 @@
 <?php
   require("../../config/config.php");
-  $data = array( "total"=>0, "paginas"=>0, "registros"=>array() );
-  $cantidad = 10;
-  $sql ="SELECT SQL_CALC_FOUND_ROWS * FROM Producto ORDER BY NombreProducto LIMIT ".$pagina*$cantidad.",".$cantidad." ";
-  $result=mysqli_query($conexion, $sql);
-  $result_total = mysqli_query('SELECT FOUND_ROWS() as total');
-  $reg = mysql_fetch_assoc( $result_total );
-  $data["total"] = $reg["total"];
-  $data["paginas"] = ceil( $reg["total"]/$cantidad );
-
+  $Buscar = "Coca";
+  $reult=mysqli_query($conexion,"SELECT Id, NombreProducto FROM Producto WHERE NombreProducto = '$Buscar';") or
+    die("Problemas en el select:".mysqli_error($conexion));
   while( $reg = mysql_fetch_assoc( $result ) ){//recorro los datos y los almaceno
-    $data["registros"][] = $reg;
+    echo $data[1];
+    $data[] = $reg;
   }
-  echo $data[2];
+  echo $data[1];
 
   /*
 

@@ -1,3 +1,5 @@
+var id_producto = 0;
+
 function confirmar(){
 
 		var Usuario=$('#Usuario').val();
@@ -51,12 +53,29 @@ function getNumeroFactura(){ //busco el numero de la nueva factura
 	url: 'includes/clases/cl_abm.php',
 	data: "boton=num_factura"
 }).done(function( ulti ) {
-			alert("algo"+ulti);
+			//alert("algo"+ulti);
 			$("#formulario [name='num_factura']").val(ulti)
 	});
 }
-// funcion que se inicia luego de cargar la pagina
-$(function () {
-	getNumeroFactura();
-	buscar();
-})
+
+function buscar(){
+
+	var Buscar=$('#Buscar').val();
+
+	$.ajax({
+		type: "POST",
+		url: 'includes/clases/cl_abm.php',
+		data: 'Buscar='+Buscar+'&boton=buscar'
+	}).done(function(data){
+		if(data){
+			data_busqueda = eval(data);
+			$("#busqueda [name='idprod']").val(data_busqueda[0].id);
+			$("#busqueda [name='nombreproducto']").val(data_busqueda[0].ProdNombre);
+			//alert(data_busqueda[0].ProdNombre);
+			//alert(data_busqueda[0].id);
+		}else {
+			alert("No Hay existencias ");
+		}
+
+	});
+}

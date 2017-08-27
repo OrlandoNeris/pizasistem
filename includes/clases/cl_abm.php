@@ -54,9 +54,16 @@
          $ultimo += 1;
          echo $ultimo;
          break;
-      //case 'buscar':
-        //$data = array( "total"=>0, "paginas"=>0, "registros"=>array() );
-        //$cantidad = 10;
-
+      case 'buscar':
+        $Buscar = $_POST['Buscar'];
+        $registros=mysqli_query($conexion,"SELECT Id, NombreProducto, Stock FROM Producto WHERE NombreProducto = '$Buscar' AND Stock > 0;") or
+          die("Problemas en el select:".mysqli_error($conexion));
+        if($reg=mysqli_fetch_array($registros)){
+          $datos[] = array("id" => $reg[0], "ProdNombre" => $reg[1]);
+          echo json_encode($datos);
+        }else {
+          echo FALSE;
+        }
+        break;
     }
  ?>
