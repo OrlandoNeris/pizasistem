@@ -23,7 +23,7 @@ git push origin master | hago push
 
 __________________________________________________________
 una vez esté todo inciializado, los pasos a seguir cada vez que quiera hacer un push :
-	-"git add ." o "git add nombre_del_archivo" 
+	-"git add ." o "git add nombre_del_archivo"
 	-git commit -m "comentario obligatorio"
 	-git push origin master
 
@@ -32,10 +32,10 @@ nos crea una carpeta ya con el nombre del repo, asi q si queremos clonar "algo" 
 git init
 git clone https://github.com/gutic/pizasistem
 cd /algo
-git pull | actualizo el repo con el commit mas reciente
+git pull origin master| actualizo el repo con el commit mas reciente
 
 _________________________________________________________
-		
+
 		-Para borrar archivos-
 git rm archivo1.txt
 
