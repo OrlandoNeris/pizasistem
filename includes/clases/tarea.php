@@ -1,46 +1,103 @@
 <?php
-  require("../../config/config.php");
-  $Buscar = "Coca";
-  $reult=mysqli_query($conexion,"SELECT Id, NombreProducto FROM Producto WHERE NombreProducto = '$Buscar';") or
-    die("Problemas en el select:".mysqli_error($conexion));
-  while( $reg = mysql_fetch_assoc( $result ) ){//recorro los datos y los almaceno
-    echo $data[1];
-    $data[] = $reg;
-  }
-  echo $data[1];
 
-  /*
+	error_reporting(E_ERROR);
+	include_once('views/head.php');
+	include_once('views/navbar.php');
 
-  $registros=mysqli_query($conexion,"SELECT NroComprobante FROM Factura;") or
-    die("Problemas en el select:".mysqli_error($conexion));
-   $reg=($reg=mysqli_fetch_array($registros));
-   $ultimo = $reg[0];
-   while ($reg=mysqli_fetch_array($registros))
-   {
-     if ($ultimo < $reg[0]){
-         $ultimo = $reg[0];
-     }
-   }
-   if($ultimo == 0){
-     $ultimo = 1;
-   }
-   echo $ultimo +1 ;
-   */
-    /*
+?>
+<?php
+  //parte guiso -solo de test-
+	//$num_factura = $_POST('num_factura');
+	// $totaliva = 0;
+	// $host="localhost";
+	// $bbdd="usertest";
+	// $user="root";
+	// $pass="qweasd";
+	// $conexion=new mysqli($$host,$user,$pass,$bbdd);
+	// $registros=mysqli_query($conexion,"SELECT id, Tipo FROM Factura") or
+	// die("error:".mysqli_error($conexion));
+	// $reg=mysqli_fetch_array($registros);
+  // //parte guiso -solo de test-
+?>
 
-    $Usua=mysqli_fetch_array($result);
-    session_start();
-    $_SESSION['Id']=$Usua[0];
-    $_SESSION['Usuario']=$Usua[1];
-    $mensajeError='Logueado correctamente ok.';
-    $logok = TRUE;
-    echo "paso";
-    console.log("paso");
 
-  else:
-    echo 'Usr o pass erronea';
-    //7echo "fail";
-    //console.log("fail");
-    */
+ <div align="center" style="width:60%" class="col-xs-50 col-sm-0 col-md-50 col-lg-0 well">
+				<table style="width:100%" border="3">
+          <tr>
+            <td  style="width:50%" valign="top">EMPRESA
+							<br>
+						 <p align="center"> Pizeria Lo Vago SA</p>
+						</td>
+            <td style="width:50%">TIPO FACTURA: <br>
+							NUMERO: <br>
+              FECHA: <br>
+              CUIT: MICUIT  <br>
+             </td>
+          </tr>
+        </table>
+        <table style="width:100%">
+          <tr>
+            <td style="width:45%" valign="top">
+              cliente <b>NOMBRE CLIENTE</b>
+              <br>domicilioCLIENTE
+              <br>LUGARYFECHAEMISION:
+            </td>
+            <td align="center" valign="top"> cuit
+							<br>
+							CUITCLIENTE
+						</td>
+            <td align="right" valign="top"> forma pago
+							<br>
+							FORMAPAGO
+						</td>
+          </tr>
+        </table>
+        <table style="width:100%" border="3" bgcolor="black">
+          <tr>
+            <td style="width:50%">Detalle</td>
+            <td style="width:20%">cantidad</td>
+            <td style="width:20%">Precio</td>
+            <td style="width:10%">Total</td>
+          </tr>
+        </table>
+        <br>
+        <table style="width:100%" border="1">
+          <tr>
+            <td style="width:50%">DetART</td>
+            <td style="width:20%">cantART</td>
+            <td style="width:20%">PrART</td>
+            <td style="width:10%">ImpART</td>
+          </tr>
+        </table>
+        <table style="width:100%" border="3">
+          <tr>
+            <br>
+            <br>
+            <td style="width:20%, hight:10px" align"left">
+              SUBTOTAL <br>
+                DESCUENTO <br>
+                IVA ___%
+               </td>
+            <td style="width:20%">
+							SUBTOTAL <br>
+							descuento <br>
+							iva
+						</td>
+            <td style="width:60%" valign="top">TOTAL:
+							<br>
+						 <p align="center"> TOTAL</p>
+						</td>
+          </tr>
+        </table>
 
- ?>
+    <div class="col-xs-100 col-sm-12 col-md-12 col-lg-100" id="mensaje" align="center"></div>
+  </div>
+	<script type="text/javascript">
+	// funcion que se inicia luego de cargar la pagina
+	$(function () {
+		mostrar_factura()
+	})
+	</script>
+<?php
+  include_once('views/footer.php');
+	?>

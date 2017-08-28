@@ -12,6 +12,9 @@
 						<form id="busqueda">
 						Productos <input type="text" name="Buscar" id="Buscar" >
 						<input type="button" value="Buscar"  onclick="buscar();" />
+						<br>
+						<br>
+						<br>
 					<table style="width:100%">
 						<thead>
 							<tr>
@@ -27,10 +30,14 @@
 										<td><b>Cantidad </b></td>
 										<td><input type="text" name="Cantidad" id="Cantidad" value="0"></td>
 									</tr>
-								</form>
+									<tr>
+										<td align="right"> <br> <input type="button" value="Agregar" onclick="agregar();" /></td>
+									</tr>
 							</tr>
+
 						</thead>
 					</table>
+					</form>
 						<div id="paginas"></div>
 					<div id="navegador"></div>
 				</fieldset>
@@ -61,6 +68,10 @@
 								<td><input type="text" name="num_factura" id="num_factura" ></td>
 							</tr>
 							<tr>
+								<td><b>Descuento </b></td>
+								<td><input type="text" name="Descuento" id="Descuento" value="0"></td>
+							</tr>
+							<tr>
 								<td><b>Tipo Factura</b></td>
 								<td>
 									<select name="tipofactura" id="tipo_factura">
@@ -72,9 +83,9 @@
 								</td>
 							</tr>
 						</table>
-						<input type="button" value="Guardar" onclick="guardar();" />
 						<input type="button" value="Limpiar"  onclick="limpiar();" />
 						<input type="button" value="Generar Factura" onclick="factura_venta();" />
+						<input type="button" value="prueba" onclick="mostrar_factura();" />
 					</form>
 				</fieldset>
 			</td>
@@ -83,8 +94,7 @@
 		<script type="text/javascript">
 		// funcion que se inicia luego de cargar la pagina
 		$(function () {
-			getNumeroFactura();
-			//buscar();
+			getNumeroFactura()
 		})
 		</script>
   <div class="col-xs-100 col-sm-12 col-md-12 col-lg-100" id="mensaje" align="center"></div>
