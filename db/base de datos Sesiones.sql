@@ -17,9 +17,10 @@ NroComprobante int not null,
 Fecha date not null,
 Iva float not null,
 Descuento float not null
+Lugar varchar(50) not null
 );
 
-INSERT INTO `Factura` (`Id`, `Tipo`, `FormaPago`, `Persona`, `NroComprobante`,`fecha`,`Iva`,`Descuento`) VALUES (NULL, 'A', 'Contado', '1', '1', '2017/08/30', '3', '0');
+INSERT INTO `Factura` (`Id`, `Tipo`, `FormaPago`, `Persona`, `NroComprobante`,`fecha`,`Iva`,`Descuento`,`Lugar`) VALUES (NULL, 'A', 'Contado', '1', '1', '2017/08/30', '3', '0', 'local comercial');
 
 Create Table Producto
 (Id serial Primary key,
